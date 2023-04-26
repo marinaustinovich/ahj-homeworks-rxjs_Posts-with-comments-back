@@ -12,7 +12,9 @@ app.use(cors());
 
 function generateData() {
   const data = [];
-  for (let i = 0; i < 10; i++) {
+  const randomLength = faker.datatype.number({ min: 1, max: 10 });
+
+  for (let i = 0; i < randomLength; i++) {
     data.push({
       author_id: faker.datatype.uuid(),
       title: faker.lorem.sentence(),
@@ -27,7 +29,8 @@ function generateData() {
 
 function generateComments() {
   const data = [];
-  for (let i = 0; i < 3; i++) {
+  const randomLength = faker.datatype.number({ min: 1, max: 3 });
+  for (let i = 0; i < randomLength; i++) {
     data.push({
       id: faker.datatype.uuid(),
       post_id: faker.datatype.uuid(),
