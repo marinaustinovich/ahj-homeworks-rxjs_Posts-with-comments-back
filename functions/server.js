@@ -8,9 +8,7 @@ const path = require('path');
 const router = new Router();
 const app = new Koa();
 
-app.use(cors({
-  origin: ['http://localhost:8081', 'https://example.com']
-}));
+app.use(cors());
 
 function generateData() {
   const data = [];
@@ -50,19 +48,17 @@ router.get('/', async (ctx) => {
 });
 
 router.get('/posts/latest', async (ctx) => {
-  const response = {
+  ctx.body = {
     status: 'ok',
     data: generateData(),
   };
-  ctx.body = response;
 });
 
 router.get('/posts/:post_id/comments/latest', async (ctx) => {
-  const response = {
+  ctx.body = {
     status: 'ok',
     data: generateComments(),
   };
-  ctx.body = response;
 });
 
 app.use(router.routes()).use(router.allowedMethods());
