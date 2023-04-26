@@ -8,8 +8,9 @@ const path = require('path');
 const router = new Router();
 const app = new Koa();
 
-app.use(cors());
-
+app.use(cors({
+  origin: ['http://localhost:8081', 'https://example.com']
+}));
 
 function generateData() {
   const data = [];
