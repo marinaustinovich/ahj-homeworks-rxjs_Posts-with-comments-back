@@ -1,6 +1,6 @@
 {
   "name": "back",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "the second task about RxJS (posts with comments) - back-end",
   "main": "server.js",
   "scripts": {

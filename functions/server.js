@@ -44,7 +44,7 @@ function generateComments() {
   return data;
 }
 
-app.use(serve(path.join(__dirname, 'public'))); // предоставлять статические файлы из папки 'public'
+app.use(serve(path.join(__dirname, 'public'))); 
 
 router.get('/', async (ctx) => {
   ctx.body = 'Welcome to server!';
